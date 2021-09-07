@@ -2,7 +2,7 @@ from typing import Any
 
 class Node:
     """
-         models a node in a linked list
+        models a node in a linked list
     """
 
     def __init__(self, data: Any) -> None:
