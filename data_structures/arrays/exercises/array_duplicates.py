@@ -6,7 +6,7 @@
     For example: if we have a list [1, 2, 3, 1, 5] then the algorithm 
     can detect that there are a duplicate with value 1.
 
-    Note: the array can not contain items smaller than 0 and items with 
+    Assumptions: the array can not contain items smaller than 0 and items with 
     values greater than the size of the list. 
     This is how we can achieve O(N) linear running time complexity!
 """
@@ -15,6 +15,7 @@
 def find_repetition(array):
 
     for item in array:
+
         if array[abs(item)] >= 0:
             array[abs(item)] = -array[abs(item)]
         else:
