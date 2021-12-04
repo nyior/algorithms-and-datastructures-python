@@ -1,4 +1,6 @@
-from singly_linked_list.implementation import LinkedList, Node
+from linked_lists.singly_linked_list.implementation import LinkedList, Node
+from stacks.implementation import Stack
+
 
 
 """

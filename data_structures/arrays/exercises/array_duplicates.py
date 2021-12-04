@@ -15,6 +15,7 @@
 def find_repetition(array):
 
     for item in array:
+
         if array[abs(item)] >= 0:
             array[abs(item)] = -array[abs(item)]
         else:
