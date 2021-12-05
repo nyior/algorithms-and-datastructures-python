@@ -12,6 +12,6 @@ the first  characters of the infinite string.
 There are 4 occurrences of a in the substring.
 """
 
-def repeatedString(s, n):
+def repeated_string(s, n):
     
     return (s.count('a')*(n//len(s))) + (s[:n % len(s)].count('a'))
