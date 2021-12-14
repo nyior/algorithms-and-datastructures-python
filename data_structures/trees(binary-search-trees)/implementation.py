@@ -57,20 +57,23 @@ class BinarySearchTree:
 
         if node:
             if not node.left_child and not node.right_child: # removing leaf node
-                node.parent.left_child = None if node == node.parent.left_child \
-                    else  node.parent.right_child = None
+                if node == node.parent.left_child:
+                    node.parent.left_child = None
+                else:  node.parent.right_child = None
 
             # if node.left_child and node.right_child: # removing node with left and right child
             #     node.parent.left_child = None if node.data < node.parent.data \
             #         else  node.parent.right_child = None
 
             if node.left_child: # removing node with left child only
-                node.parent.left_child = node.left_child if node == node.parent.left_child \
-                    else  node.parent.right_child = node.left_child
+                if node == node.parent.left_child:
+                    node.parent.left_child = node.left_child 
+                else:  node.parent.right_child = node.left_child
 
             if node.right_child: # removing node with right child only
-                node.parent.left_child = node.right_child if node == node.parent.left_child \
-                    else  node.parent.right_child = node.right_child
+                if node == node.parent.left_child:
+                    node.parent.left_child = node.right_child 
+                else:  node.parent.right_child = node.right_child
 
 
     def traverse(self) -> None:
