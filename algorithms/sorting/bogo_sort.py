@@ -20,7 +20,7 @@ class BogoSort():
 
     # Fisher Yates Shuffle Algorithm
     def _shufle(self):
-        for i in range(len(self.num)-2, 0, -1): # Start from the end
+        for i in range(len(self.num)-2, -1, -1): # Start from the end
             j = random.randint(0, i+1)
             self.nums[i], self.nums[j] = self.nums[j], self.nums[i] # Swap
 
