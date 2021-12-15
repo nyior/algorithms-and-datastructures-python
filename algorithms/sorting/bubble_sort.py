@@ -12,6 +12,10 @@
   compare elements from index 0 to the last index - 1 =(5-1=4)
 
   We will repeat the circle until we are only left with the first index to look at.
+
+  Assumption: sorting in ascending order
+
+  Run time complexity: O(n^2)
 """
 
 
