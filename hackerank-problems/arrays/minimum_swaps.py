@@ -8,11 +8,23 @@
 """
 
 def minimum_swaps(arr):
+    a = dict(enumerate(arr,1))
+    b = dict(
+                zip(
+                    list(a.values()),
+                    range(1,len(a)+1)
+                )
+        )
     swaps = 0
     
-    for i in range(len(arr)):
-        for j in range(len(arr)):
-            if (arr[i] > (i+1)) and (arr[j] == (i+1)):
-                arr[i], arr[j] = arr[j], arr[i]
-                swaps += 1
+    for i in a:
+        
+        x = a[i]
+        index = b[i]
+        
+        if x!=i:
+            a[i], a[index] = a[index], a[i]
+            b[x], b[i] = b[i], b[x] # Update second dict too
+            swaps+=1
+
     return swaps

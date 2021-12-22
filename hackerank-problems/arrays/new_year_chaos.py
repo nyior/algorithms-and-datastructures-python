@@ -17,20 +17,27 @@
     Person 4 had to bribe 3 people to get to the current position. Print Too chaotic.
 """
 
-def minimum_bribes(q): # This solution is grossly inefficient O(n**2)
+def minimum_bribes(q): # This solution is inefficient O(n**2)
     bribes = 0
 
-    for i in range(len(q)-1):
-        if (q[i] - (i+1)) > 2:
+    for k, v in enumerate(q, 1):
+        if v-k > 2:
             print("Too chaotic")
             return
-        
+    
+    # Using Bubble sort
     for i in range(len(q)-1):
-        for j in range(len(q)-1):
+        for j in range(len(q)-i-1):
             if q[j] > q[j+1]:
-                q[j], q[j+1]  = q[j+1], q[j]
+                q[j], q[j+1] = q[j+1], q[j]
                 bribes += 1
-                
+                unsorted = True # some elements might still be unsorted
+        
+        if unsorted:
+            unsorted = False
+        else:
+            break # No need to continue the loop
+    
     print(bribes)
 
 

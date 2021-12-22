@@ -1,6 +1,6 @@
 """
   Insertion sort always out performs the bubble sort and selection sort
-  Insertion sort is adaptive and stable. This means if we pass it an array with
+  Insertion sort is adaptive and unstable. This means if we pass it an array with
   an already sorted part, it takes that into account too.
 
   In this sorting algorithm, an element is compared the elements preceeding it.
