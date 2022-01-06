@@ -3,7 +3,7 @@
     of the list it is passed until it finds the sorted version of that list.
 
     it has a running time complexity of O(n!). It is the most inefficient
-    sorting algorithm. But when executed on a quantum computer, it has one of the 
+    sorting algorithm. But when executed on a quantum computer, it has one of the best
     run time.
 """
 import random
@@ -20,7 +20,7 @@ class BogoSort():
 
     # Fisher Yates Shuffle Algorithm
     def _shufle(self):
-        for i in range(len(self.num)-2, -1, -1): # Start from the end
+        for i in range(len(self.num)-2, -1, -1): # Start from the end -- start, stop, step(increment by step value, in this case -1)
             j = random.randint(0, i+1)
             self.nums[i], self.nums[j] = self.nums[j], self.nums[i] # Swap
 

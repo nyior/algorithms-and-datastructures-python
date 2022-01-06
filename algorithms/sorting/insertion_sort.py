@@ -3,7 +3,7 @@
   Insertion sort is adaptive and unstable. This means if we pass it an array with
   an already sorted part, it takes that into account too.
 
-  In this sorting algorithm, an element is compared the elements preceeding it.
+  In this sorting algorithm, an element is compared with the elements preceeding it.
   Swapping is done where necessary
 
 
@@ -59,6 +59,9 @@ class Person:
     # when we use < then Python calls this function to decide what object is smaller and what is greater
     def __lt__(self, other):
         return self.age < other.age
+
+    def __gt__(self, other):
+        return self.age > other.age
  
     # string representation of the object (when we use the print() function then this function is called)
     def __repr__(self):

@@ -4,7 +4,7 @@
     O(n) running time sorting algorithms: bucket sort and radix sort.. They are not comparison
     based sorting algorithms.
 
-    Quick sort and Merge could recursively implemented. Quicksort is also an in place 
+    Quick sort and Merge could be recursively implemented. Quicksort is also an in place 
     sorting algorithm because it does not require extra memory for the sorting operation
 
     insertion sort and merge sort are stable sorting algorithms. This means that after the sorting has

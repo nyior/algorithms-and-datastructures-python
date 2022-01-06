@@ -7,7 +7,7 @@
   sorted and unsorted part. With each iteration the unsorted part is traversed and manipulated.
   This is repeated until there is no unsorted part left. How is this achieved?
 
-  With each iteration the smallest item in the unsorted part is sported and swapped with the
+  With each iteration the smallest item in the unsorted part is spoted and swapped with the
   leftmost item in the unsorted part. The smallest item put in place of the leftmost item then 
   becomes a part of the sorted part.
 
