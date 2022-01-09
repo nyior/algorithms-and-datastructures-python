@@ -8,7 +8,7 @@
     value will always be in its sorted position.
 
     The quicksort algorithm has an average runtime complexity of O(NlogN), and a worse case runtime
-    complexity of O(n**2).
+    complexity of O(n**2). The quicksort algorithm is in-place, though unstable.
 """
 
 class Quicksort(object):
