@@ -1,6 +1,7 @@
 """
     The quicksort is a comparison based sorting algorithm that's based 
     on the devide and conquer approach to problem solving.
+    
     Given a list of items, the quicksort algorithm sorts it by first of all
     deviding the list into two sub-lists: left and right lists. It does this
     by generating a pivot value. All the items in the left sublist must be less
