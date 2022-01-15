@@ -1,5 +1,5 @@
 """
-  Selection sort always out performs the bubble sort. It is also unstable
+  Selection sort always out performs the bubble sort. It is aunstable.
   Selection sort also does fewer swap operations, and by extension memory writes 
   than Bubble sort. In the  worst case, it does n-1 swap operations
 
@@ -38,7 +38,7 @@ class SelectionSort():
     def sort(self) -> None:
         for i in range(len(self.nums)-1):
 
-            index = i # index of the smalles item in the unsorted part
+            index = i # index of the smallest item in the unsorted part
 
             for j in range(i, len(self.nums)):
                 if self.nums[j] < self.nums[index]:

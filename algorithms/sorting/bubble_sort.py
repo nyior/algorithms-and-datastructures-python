@@ -1,6 +1,7 @@
 """
   The core principle in Bubble sort is to compare all adjacent elements in 
   an array and then move the biggest element to the end of the list with each iteration.
+  The Bubble sort algorithm is stable
 
   The number of elements to be parsed decreases with each iteration.
 
@@ -17,7 +18,6 @@
 
   Run time complexity: O(n^2)
 """
-
 
 class BubbleSort():
 

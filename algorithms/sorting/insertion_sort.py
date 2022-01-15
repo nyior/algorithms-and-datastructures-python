@@ -1,11 +1,10 @@
 """
   Insertion sort always out performs the bubble sort and selection sort
-  Insertion sort is adaptive and unstable. This means if we pass it an array with
+  Insertion sort is adaptive and stable. This means if we pass it an array with
   an already sorted part, it takes that into account too.
 
   In this sorting algorithm, an element is compared with the elements preceeding it.
   Swapping is done where necessary
-
 
   For example given an array, [1,5,2,7,0,11]
   For iteration one, we will consider 1, has no preceeding elements so we proceed to the second
@@ -15,7 +14,6 @@
 
   For iteration 3, we compare 2 with 5 and 1. We'd end up swapping 2 with 5 and this yields, 
   [1,2,5,7,0,11]. We repeat this process until we've reached the last item
-
 
   Assumption: sort in ascending order
 
@@ -41,7 +39,6 @@ class InsertionSort():
         self.nums[i], self.nums[j] = self.nums[j], self.nums[i]
 
 
-
 """"
     We have seen how to implement insertion sort with integers. 
     Let's use insertion sort with custom objects. Create a Person class with 2 instance 
@@ -58,14 +55,15 @@ class Person:
     # we have to define the 'less than' function to let Python know how to interpret the < and > operators
     # when we use < then Python calls this function to decide what object is smaller and what is greater
     def __lt__(self, other):
+
         return self.age < other.age
 
     def __gt__(self, other):
-        return self.age > other.age
+        return self.name > other.name
  
     # string representation of the object (when we use the print() function then this function is called)
     def __repr__(self):
-        return str(self.name)
+        return f"{self.name}: {self.age}"
  
  
 # we can use the exact same insertion sort algorithm we have implemented
@@ -75,13 +73,20 @@ def insertion_sort(people):
  
         j = i
  
-        while j > 0 and people[j - 1] > people[j]:
+        while j > 0 and people[j - 1] < people[j]:
             people[j], people[j-1] = people[j-1], people[j]
             j = j - 1
  
  
 if __name__ == '__main__':
  
-    n = [Person('Adam', 23), Person('Ana', 17), Person('Kevin', 32), Person('Daniel', 37)]
+    n = [
+            Person('Adam', 23), 
+            Person('Becca', 17),
+            Person('Ana', 18), 
+            Person('Ana', 17),  
+            Person('Kevin', 32),
+            Person('Daniel', 37)
+        ]
     insertion_sort(n)
     print(n)
