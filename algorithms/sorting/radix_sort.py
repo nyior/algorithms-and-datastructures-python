@@ -1,7 +1,7 @@
 """
 Counting sort becomes really inefficient when the difference between
 the minimum and maximum item in a list is significantly greater than
-the mximum item in the list. In such situations we actually could
+the number of items in the list. In such situations we actually could
 end up with a running time complexity that surpases the quadratic running time.
 
 The radix sort algorithm exists to solve this problem. It is stable.

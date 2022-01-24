@@ -17,7 +17,7 @@ class CountSort(object):
 
     # First we count all the items in data and the number of times they occur
     # Indexes start from 0 + we have to consider negative indexes as well
-    for in range(len(self.data)):
+    for i in range(len(self.data)):
         self.count_array[self.data[i]-min(self.data)] += 1
 
     # Now consider the counting array: see how many times an entry occurs
