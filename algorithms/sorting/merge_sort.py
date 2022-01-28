@@ -24,31 +24,36 @@ def merge_sort(data):
     # CONQUER PHASE: this where we merge the sub arrays into a single new array.
     # We do this, by comparing each array element with each other and merging them 
     # into a result array we will create
-    i = 0 # tract elems in left subarray
+    i = 0 # track elems in left subarray
     j = 0 # track elements in right sub array
     k = 0 # manipulate result array
-
-    while i < len(left_subarray) and j < len(right_subarray):
-        if left_subarray[i] < right_subarray[j]:
-            data[k] = left_subarray[i]
+    
+    left_length = len(left_subarray)
+    right_length = len(right_subarray)
+    
+    while i < left_length and j < right_length:
+        item_1 = left_subarray[i]
+        item_2 = right_subarray[j]
+        
+        if item_1 <= item_2:
+            data[k] = item_1
             i += 1
 
-        if left_subarray[i] > right_subarray[j]:
-            data[k] = right_subarray[j]
+        else:
+            data[k] = item_2
             j += 1
-
         k += 1
 
     # If there are still items in the left subarray
-    while i < len(left_subarray):
+    while i < left_length:
         data[k] = left_subarray[i]
         i += 1
         k += 1
 
     # If there are still items in the rightt subarray
-    while j < len(right_subarray):
+    while j < right_length:
         data[k] = right_subarray[j]
-        i += 1
+        j += 1
         k += 1
-
+   
 # TODO: revise all sorting algorithms, Understand recursion and the stack memory, practice hackerrank sorting probs
