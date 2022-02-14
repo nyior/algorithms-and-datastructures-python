@@ -22,8 +22,6 @@
     resizes the array by creating a new array that's double the size of the existing 
     array and it then pushes all the items into the new array.
 """
-
-
 # Initializing an array
 numbers = [1, 2, 3, 4, 5]
 
