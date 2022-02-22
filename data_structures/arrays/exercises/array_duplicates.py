@@ -21,7 +21,18 @@ def find_repetition(array):
         else:
             print(f"{abs(item)} is repeated")
 
+# Array duplicates, another approach
+def find_duplicates(arr):
+    indexes = {}
 
+    for i in arr:
+
+        if indexes.get(i):
+            print(f"duplicate: {i}")
+        else:
+            indexes[i]=i
+  
+  
 if __name__ == "__main__":
     arr = [2, 1, 3, 1, 4, 3, 2]
 

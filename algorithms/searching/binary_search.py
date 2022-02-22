@@ -22,5 +22,19 @@ def binary_search(array, value):
             lower_bound = midpoint+1
 
 
+
+unorderable_list = [100, 2, 50, 0, 5, 1, 11, 10, 3, 4, 60, 20]
+
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        index = i
+
+        while index>0 and arr[index]<arr[index-1]:
+            arr[index], arr[index-1] = arr[index-1], arr[index]
+            index -= 1
+    print(arr)
+
+
 if __name__ == '__main__':
-    binary_search(ordered_list, 100)
+    # binary_search(ordered_list, 100)
+    insertion_sort(unorderable_list)
