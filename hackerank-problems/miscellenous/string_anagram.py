@@ -8,52 +8,66 @@ dictionary list for each String in query list.
 
 Eg Output: 3 2 0
 
-STEP 1: UNDERSTANDING THE PROBLEM
-- Input: two lists: dictionary list, and a query list
-- Key Operation: finding the number of anagrams each word in the query string has in the dict list
-- Expected Output: a list of the number of anagrams each query entry has
+STEP-1: UNDERSTANDING THE PROBLEM
+- inputs: two arrays each containing strings
+- key operation: for each word in the query array, find all its anagrams in the dict array
+- expected output: a list of numbers, with each number representing the number of anagrams
+a query entry has.
 
-STEP 2: HOW CAN I MANUALLY CARRY OUT THE KEY OPERATION
-    - what is the simplest version of the problem: find the first anagram of a query entry in the 
-    dictionary entry
-    - How can I manually solve the simplest version above:
-        - Pick each item in the query list, compare it against each item in the dict list to
-        see if the item in the dict list is it's anagram
-        - how do i manually find out if two words are anagrams of each other
-            - do they have thesame length?
-                - sort them
-                - comapare each alphabet
+STEP-2: MANUALLY SOLVING THE PROBLEM
+- simplest version of the problem: checking if two words are anagrams
+- how do I manually check if two words are anagrams? e.g came   maec
+    - if they're of different lengths then they're not anagrams
+    - Else:
+        - pick each alphabet in the first word and see if it exists in the second word
+
+- Scale simplest version to the given problem:
+    - How do I manually check the number of anagrams that a word has in a given list
+        - declare a counter
+        - compare each word in the list with the given word, each time an anagram is found
+        increment counter
+        - how do i track for multiple words?
+            - have an array of results push counter into the array at the end of every pass
+            and reset counter
+
+        - Is there a pattern? 
+            - None spotted
+
+
+STEP-4: PSEUDOCODE
+Eg Input : 
+        dictionary -> ['heater', 'cold', 'clod', 'reheat', 'dolc']
+        query -> ['codl', 'heatre', 'abcd']
+
+    - set counter to 0
+    - declare empty list result
+    - while i < len(query)
+        for j in dictionory
+            if j is_anagram_of query[i]
+                counter + = 1
+
+            result.append(counter)
+            counter = 0
+
+time complexity = m * n * 
+
 """
-
-def anagrams(word1, word2):
-    if len(word1) != len(word2):
-        return False
-
-    word1 = sorted(word1)
-    word2 = sorted(word2)
-
-    for i in range(len(word1)-1):
-        if word1[i] != word2[i]:
-            return False
-
-    return True
-
-
+from collections import Counter
+    
 def string_anagram(dic, query):
-    n = len(query)
-    ocr = [0 for _ in range(n)]
+    dic = [sorted(i) for i in dic]
+    print(f"dic list: {dic}")
+    dic = Counter(dic)
 
-    counter = 0
+    query = [sorted(i) for i in query]
 
-    while counter < n:
-        for i in dic:
-            if anagrams(query[counter], i):
-                ocr[counter] += 1
+    ans = []
 
-        counter += 1
+    for i in query:
+        ocr = dic.get(i, 0)
+        ans.append(ocr)
 
-    return ocr
-
+    return ans
 
 
 if __name__ == '__main__':
