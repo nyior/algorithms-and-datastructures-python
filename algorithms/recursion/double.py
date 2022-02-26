@@ -1,4 +1,7 @@
-"""double each entry in a given array recursively"""
+"""
+    double each entry in a given array recursively
+    E.g [1, 2, 3, 4, 5]
+"""
 
 
 def double_entries(arr, index=0):
