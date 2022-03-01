@@ -12,11 +12,52 @@
         - A list of all the generated anagrams
 
     simplest version of the problem:
-        - re-order a given string
-             - swap the elements at any two indexes
-        - bigger problem solution: generate all the possible pairs of indexes, and swap
-        the elements at the indexes.
-            - generate all the possible pairs of numbers between 0..n
-            - Get only the unique pairs
-            - swap the indexes represented by each pair
+        string = 'ab'
+    - how do I move from ab to the output 2?
+        - every string has one anagram by default-- itself
+        - swap the two elements to get the second anagram
+        - 'abc'
+
+    pseudocode
+
+        - def all_anagrams(string)
+                all_anagrams = []
+                anagrams = all_anagrams(string[1:])
+
+                if len(string) == 0:
+                    return
+
+                if len(string) == 1:
+                    return string[0]
+
+                for a in anagrams
+                    for index in len(a)
+                        new_anagram = insert_string[0]_at_index
+                        all_anagrams.append(new_anagram)
+
+                return all_anagrams
+
+
 """
+
+def all_anagrams(string):
+    if len(string) == 0:
+        return
+
+    if len(string) == 1:
+        return string[0]
+
+    words = []
+    anagrams = all_anagrams(string[1:])
+
+    for a in anagrams:
+        for index in range(len(a)):
+            a_copy = a
+            new_anagram = a[:index] + string[0] + a[index:]
+            words.append(new_anagram)
+
+    return words
+
+
+if __name__ == '__main__':
+    print(all_anagrams('nyior'))
