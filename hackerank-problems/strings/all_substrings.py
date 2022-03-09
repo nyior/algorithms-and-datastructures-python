@@ -66,6 +66,35 @@ def all_subs(string):
 
     return subs
 
+from itertools import combinations
+def all_subs_alternative(string):
+    # Generate all pairs of indexes
+    subs = []
+    indexes = combinations(range(len(string)+1), r=2)
+
+    for x, y in indexes:
+        subs.append(string[x:y])
+
+    return subs
+
+
+def all_subs_recursive(string):
+    """
+        sub-problem: 
+        all_subs_recursive([string[1:]])
+    """
+    if len(string) == 1:
+        return string[0]
+
+    new_subs = []
+    subs = all_subs_recursive(string[1:])
+
+    new_subs.append(string[0])
+    for sub in subs:
+        new_subs.append(string[0] + sub)
+
+    return new_subs
+
 
 if __name__ == '__main__':
-    print(all_subs('geeks'))
+    print(all_subs_recursive('dabc'))
